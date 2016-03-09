@@ -11,26 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160309094918) do
+ActiveRecord::Schema.define(version: 20160309150029) do
 
-  create_table "questions", force: :cascade do |t|
-    t.integer  "user_id",              null: false
+  create_table "answers", force: :cascade do |t|
+    t.integer  "user_id",         null: false
     t.string   "question01"
     t.string   "question02"
     t.string   "question03"
     t.string   "question04"
     t.string   "question05"
-    t.string   "vote_cherf_organizer"
-    t.string   "vote_organizer01"
-    t.string   "vote_organizer02"
-    t.string   "vote_organizer03"
-    t.string   "vote_organizer04"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.string   "chief_organizer"
+    t.string   "organizer01"
+    t.string   "organizer02"
+    t.string   "organizer03"
+    t.string   "organizer04"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
+    t.string   "email"
+    t.string   "account",                default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -45,7 +46,7 @@ ActiveRecord::Schema.define(version: 20160309094918) do
     t.boolean  "admin"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["account"], name: "index_users_on_account", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end

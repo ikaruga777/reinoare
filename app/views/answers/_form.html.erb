@@ -1,0 +1,61 @@
+<%= form_for(@answer) do |f| %>
+  <% if @answer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@answer.errors.count, "error") %> prohibited this answer from being saved:</h2>
+
+      <ul>
+      <% @answer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :question01 %><br>
+    <%= f.text_field :question01 %>
+  </div>
+  <div class="field">
+    <%= f.label :question02 %><br>
+    <%= f.text_field :question02 %>
+  </div>
+  <div class="field">
+    <%= f.label :question03 %><br>
+    <%= f.text_field :question03 %>
+  </div>
+  <div class="field">
+    <%= f.label :question04 %><br>
+    <%= f.text_field :question04 %>
+  </div>
+  <div class="field">
+    <%= f.label :question05 %><br>
+    <%= f.text_field :question05 %>
+  </div>
+  <div class="field">
+    <%= f.label :chief_organizer %><br>
+    <%= f.text_field :chief_organizer %>
+  </div>
+  <div class="field">
+    <%= f.label :organizer01 %><br>
+    <%= f.text_field :organizer01 %>
+  </div>
+  <div class="field">
+    <%= f.label :organizer02 %><br>
+    <%= f.text_field :organizer02 %>
+  </div>
+  <div class="field">
+    <%= f.label :organizer03 %><br>
+    <%= f.text_field :organizer03 %>
+  </div>
+  <div class="field">
+    <%= f.label :organizer04 %><br>
+    <%= f.text_field :organizer04 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

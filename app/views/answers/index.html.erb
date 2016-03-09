@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Answers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Question01</th>
+      <th>Question02</th>
+      <th>Question03</th>
+      <th>Question04</th>
+      <th>Question05</th>
+      <th>Chief organizer</th>
+      <th>Organizer01</th>
+      <th>Organizer02</th>
+      <th>Organizer03</th>
+      <th>Organizer04</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @answers.each do |answer| %>
+      <tr>
+        <td><%= answer.user_id %></td>
+        <td><%= answer.question01 %></td>
+        <td><%= answer.question02 %></td>
+        <td><%= answer.question03 %></td>
+        <td><%= answer.question04 %></td>
+        <td><%= answer.question05 %></td>
+        <td><%= answer.chief_organizer %></td>
+        <td><%= answer.organizer01 %></td>
+        <td><%= answer.organizer02 %></td>
+        <td><%= answer.organizer03 %></td>
+        <td><%= answer.organizer04 %></td>
+        <td><%= link_to 'Show', answer %></td>
+        <td><%= link_to 'Edit', edit_answer_path(answer) %></td>
+        <td><%= link_to 'Destroy', answer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Answer', new_answer_path %>

@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  question01: MyString
+  question02: MyString
+  question03: MyString
+  question04: MyString
+  question05: MyString
+  chief_organizer: MyString
+  organizer01: MyString
+  organizer02: MyString
+  organizer03: MyString
+  organizer04: MyString
+
+two:
+  user_id: 1
+  question01: MyString
+  question02: MyString
+  question03: MyString
+  question04: MyString
+  question05: MyString
+  chief_organizer: MyString
+  organizer01: MyString
+  organizer02: MyString
+  organizer03: MyString
+  organizer04: MyString
