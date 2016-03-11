@@ -4,7 +4,11 @@ class AnswersController < ApplicationController
   # GET /answers
   # GET /answers.json
   def index
-    @answers = Answer.all
+    if current_user.admin
+      @answers = Answer.all.order('created_at DESC')
+    else
+      @answers = Answer.where(account: current_user.account)
+    end
   end
 
   # GET /answers/1
