@@ -7,7 +7,7 @@ class AnswersController < ApplicationController
     if current_user.admin
       @answers = Answer.all.order('created_at DESC')
     else
-      @answers = Answer.where(account: current_user.account)
+      @answers = Answer.where(user_id: current_user.id)
     end
   end
 
