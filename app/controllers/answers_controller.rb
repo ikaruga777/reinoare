@@ -29,7 +29,7 @@ class AnswersController < ApplicationController
   # POST /answers.json
   def create
     @answer = Answer.new(answer_params)
-
+    @answer.user_id = current_user.id
     respond_to do |format|
       if @answer.save
         format.html { redirect_to @answer, notice: 'Answer was successfully created.' }
@@ -73,6 +73,6 @@ class AnswersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def answer_params
-      params.require(:answer).permit(:user_id, :question01, :question02, :question03, :question04, :question05, :chief_organizer, :organizer01, :organizer02, :organizer03, :organizer04)
+      params.require(:answer).permit(:question01, :question02, :chief_organizer, :organizer01, :organizer02, :organizer03, :organizer04)
     end
 end
