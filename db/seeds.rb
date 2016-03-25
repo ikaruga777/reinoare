@@ -12,3 +12,19 @@
   user.password_confirmation = 'admin'
   user.admin  = true
   user.save!
+
+  user = User.new
+  user.account = 'test1'
+  user.name = 'てすと1'
+  user.password = 'test1'
+  user.password_confirmation = 'test1'
+  user.admin  = false
+  user.save!
+
+  user = User.new
+  user.account = 'test2'
+  user.name = 'てすと2'
+  user.password = 'test2'
+  user.password_confirmation = 'test2'
+  user.admin  = false
+  user.save!
