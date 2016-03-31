@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
   resources :answers
-  devise_for :users
+  devise_scope :user do
+    get "users/sign_in/:id/:pass" => "users/sessions#new"
+  end
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
+
   get 'home/index'
   root 'home#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
