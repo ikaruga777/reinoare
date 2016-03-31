@@ -1,10 +1,11 @@
 class Users::SessionsController < Devise::SessionsController
 # before_filter :configure_sign_in_params, only: [:create]
-
   # GET /resource/sign_in
-  # def new
-  #   super
-  # end
+   def new
+     super
+    # @user.account= params[:id].to_s
+    # @user.password = params[:pass].to_s
+   end
 
   # POST /resource/sign_in
   # def create

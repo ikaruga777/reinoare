@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   resources :answers
   devise_scope :user do
-    get "users/sign_in/:id/:pass" => "devise/sessions#new"
+    get "users/sign_in/:id/:pass" => "users/sessions#new"
   end
-  devise_for :users
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
 
   get 'home/index'
   root 'home#index'
