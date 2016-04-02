@@ -1,10 +1,11 @@
 <p id="notice"><%= notice %></p>
 
+<% if current_user.admin? %>
 <p>
   <strong>User:</strong>
   <%= @answer.user_id %>
 </p>
-
+<% end %>
 <p>
   <strong>Question01:</strong>
   <%= @answer.question01 %>
