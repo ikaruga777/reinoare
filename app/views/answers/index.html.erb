@@ -7,16 +7,20 @@
   <div>
     まだ回答していません。
   </div>
+<% else %>
   <div>
-    最終回答日:
+    回答済みです。 最終回答日:
     <%= @answers.last.updated_at %>
   </div>
 <% end %>
 <br>
 <% if user_signed_in? %>
   Logged in as <strong><%= current_user.name %> </strong>|
+<% if @answers.empty? %>
   <%= link_to "回答する", new_answer_path, :class => "navbar-link" %>|
+<% else %>
   <%= link_to "回答を編集する ", edit_answer_path(@answers.last), :class => "navbar-link" %>|
+<% end %>
   <%= link_to "Logout", destroy_user_session_path, method: :delete, :class =>"navbar-link" %>
 <% else %>
   <%= link_to "Login" , new_user_session_path, :class => 'navbar-link' %>
