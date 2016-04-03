@@ -1,6 +1,5 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Listing Answers</h1>
+<h1>投票ページ</h1>
   ログインid:
   <%= current_user.account %>
 <% if @answers.empty? %>
@@ -15,7 +14,7 @@
 <% end %>
 
 <%if current_user.admin %>
-  <table>
+  <table class="table-striped">
     <thead>
       <tr>
         <th>User</th>
