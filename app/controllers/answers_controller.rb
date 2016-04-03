@@ -32,7 +32,7 @@ class AnswersController < ApplicationController
     @answer.user_id = current_user.id
     respond_to do |format|
       if @answer.save
-        format.html { redirect_to @answer, notice: 'Answer was successfully created.' }
+        format.html { redirect_to @answer, notice: '回答内容を登録しました。' }
         format.json { render :show, status: :created, location: @answer }
       else
         format.html { render :new }
@@ -46,7 +46,7 @@ class AnswersController < ApplicationController
   def update
     respond_to do |format|
       if @answer.update(answer_params)
-        format.html { redirect_to @answer, notice: 'Answer was successfully updated.' }
+        format.html { redirect_to @answer, notice: '回答内容を編集しました。' }
         format.json { render :show, status: :ok, location: @answer }
       else
         format.html { render :edit }
@@ -60,7 +60,7 @@ class AnswersController < ApplicationController
   def destroy
     @answer.destroy
     respond_to do |format|
-      format.html { redirect_to answers_url, notice: 'Answer was successfully destroyed.' }
+      format.html { redirect_to answers_url, notice: '回答内容を削除しました。' }
       format.json { head :no_content }
     end
   end

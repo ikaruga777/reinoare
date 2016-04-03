@@ -7,8 +7,8 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
 
-  get 'home/index'
-  root 'home#index'
+  get 'answers/index'
+  root 'answers#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
