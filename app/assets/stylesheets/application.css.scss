@@ -13,11 +13,11 @@
 
  */
 
- @import "bootswatch/cosmo/variables";
+ @import "bootswatch/lumen/variables";
 // Then bootstrap itself
 @import "bootstrap";
 // Bootstrap body padding for fixed navbar
 body { padding-top: 60px; }
 // Responsive styles go here in case you want them
 // And finally bootswatch style itself
-@import "bootswatch/cosmo/bootswatch";
+@import "bootswatch/lumen/bootswatch";
